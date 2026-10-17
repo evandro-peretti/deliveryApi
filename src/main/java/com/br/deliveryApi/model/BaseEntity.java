@@ -25,7 +25,7 @@ public abstract class BaseEntity {
         this.updatedAt = now;
     }
 
-    @PrePersist
+    @PreUpdate
     void onUpdate() {
         this.updatedAt = Instant.now().truncatedTo(ChronoUnit.MILLIS);
     }
