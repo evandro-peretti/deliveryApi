@@ -1,0 +1,81 @@
+HELP.md
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# =========================================================================
+# GERENCIADORES DE DEPENDÊNCIAS (Escolha o seu ou mantenha ambos)
+# =========================================================================
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.next
+pom.xml.note
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Gradle
+.gradle
+/build/
+!/build/搶ache/
+/out/
+.gradletasknamecache
+gradle-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+# Eclipse / STS (Spring Tool Suite)
+.metadata
+.settings/
+.sts4-cache/
+bin/
+tmp/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+# =========================================================================
+# BANCO DE DADOS (SQLite)
+# =========================================================================
+# Ignora arquivos de banco de dados SQLite criados na raiz ou subpastas
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# =========================================================================
+# SEGURANÇA E CONFIGURAÇÕES LOCAIS (Essencial para APIs)
+# =========================================================================
+# Arquivos que contêm senhas de banco, chaves de API e tokens locais
+.env
+.env.local
+**/src/main/resources/application-local.properties
+**/src/main/resources/application-local.yml
