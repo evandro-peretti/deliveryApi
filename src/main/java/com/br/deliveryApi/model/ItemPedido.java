@@ -25,8 +25,7 @@ public class ItemPedido extends BaseEntity{
 
     public ItemPedido() {};
 
-    public ItemPedido(Pedido pedido, Produto produto, Integer quantidade, BigDecimal valorUnitario) {
-        this.pedido = pedido;
+    public ItemPedido(Produto produto, Integer quantidade, BigDecimal valorUnitario) {
         this.produto = produto;
         this.quantidade = quantidade;
         this.valorUnitario = valorUnitario;
