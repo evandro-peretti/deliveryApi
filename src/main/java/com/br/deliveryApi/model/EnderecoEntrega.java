@@ -24,7 +24,7 @@ public class EnderecoEntrega {
     @Column(name = "entrega_estado", nullable = false, length = 2)
     private String estado;
 
-    @Column(name = "entrega_estado", nullable = false)
+    @Column(name = "entrega_cep", nullable = false)
     private String cep;
 
     public EnderecoEntrega() {}
