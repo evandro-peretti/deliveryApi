@@ -27,6 +27,9 @@ app:
     expiration-minutes: 60
   cors:
     allowed-origins: http://localhost:5173,http://127.0.0.1:5173
+  admin:
+    email: admin@exemplo.com
+    password: "${ADMIN_PASSWORD:admin123}"
 
 springdoc:
   api-docs:

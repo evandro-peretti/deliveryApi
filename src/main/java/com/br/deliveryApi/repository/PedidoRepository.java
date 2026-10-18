@@ -14,4 +14,7 @@ public interface PedidoRepository extends JpaRepository<Pedido, Long> {
 
     @EntityGraph(attributePaths = {"cliente", "itens", "itens.produto"})
     Optional<Pedido> findByIdAndClienteId(Long id, Long clienteId);
+
+    @EntityGraph(attributePaths = {"cliente", "itens", "itens.produto"})
+    Optional<Pedido> findDetalhadoById(Long id);
 }

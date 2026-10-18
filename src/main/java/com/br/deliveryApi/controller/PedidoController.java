@@ -45,9 +45,8 @@ public class PedidoController {
 
     @PatchMapping("/{id}/status")
     public PedidoResponse atualizarStatus(@PathVariable Long id,
-                                          @Valid @RequestBody AtualizarStatusRequest request,
-                                          @AuthenticationPrincipal Jwt jwt){
-        return service.atualizarStatus(clienteId(jwt), id, request.status());
+                                          @Valid @RequestBody AtualizarStatusRequest request) {
+        return service.atualizarStatus(id, request.status());
     }
 
     /** O "subject" do token é o id do cliente. */

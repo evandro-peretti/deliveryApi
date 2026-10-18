@@ -76,8 +76,9 @@ public class PedidoService {
     }
 
     @Transactional
-    public PedidoResponse atualizarStatus(Long clienteId, Long id, StatusPedido novoStatus) {
-        Pedido pedido = buscarPedidoDoCliente(clienteId, id);
+    public PedidoResponse atualizarStatus(Long id, StatusPedido novoStatus) {
+        Pedido pedido = pedidoRepository.findDetalhadoById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Pedido não encontrado"));
 
         if (STATUS_FINAIS.contains(pedido.getStatus())) {
             throw new ResponseStatusException(HttpStatus.CONFLICT,
