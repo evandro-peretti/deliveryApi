@@ -14,6 +14,7 @@ public record PedidoResponse(
         BigDecimal valorTotal,
         Instant dataPedido,
         StatusPedido status,
-        EnderecoEntregaDTO enderecoEntrega
+        EnderecoEntregaDTO enderecoEntrega,
+        Instant updatedAt
 ) {
 }

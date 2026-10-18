@@ -115,6 +115,6 @@ public class PedidoService {
                 e.getComplemento(), e.getBairro(), e.getCidade(), e.getEstado(), e.getCep());
 
         return new PedidoResponse(p.getId(), p.getCliente().getId(), p.getCliente().getNome(),
-                itens, p.getValorTotal(), p.getDataPedido(), p.getStatus(), endereco);
+                itens, p.getValorTotal(), p.getDataPedido(), p.getStatus(), endereco, p.getUpdatedAt());
     }
 }

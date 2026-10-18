@@ -25,6 +25,8 @@ app:
     # JWT (HS256) (mínimo 32 caracteres)
     secret: ${JWT_SECRET:d03a0d49326d2daea2f8e4cd81a4f2ddb006244896e4176eba8d562f286c43fd}
     expiration-minutes: 60
+  cors:
+    allowed-origins: http://localhost:5173,http://127.0.0.1:5173
 
 springdoc:
   api-docs:
