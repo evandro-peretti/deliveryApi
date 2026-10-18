@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
+import java.util.List;
 
 @Service
 public class JwtService {
@@ -34,6 +35,7 @@ public class JwtService {
                 .issuedAt(agora)
                 .expiresAt(expiraEm)
                 .claim("email", cliente.getEmail())
+                .claim("roles", List.of(cliente.getRole().name()))
                 .build();
 
         JwsHeader header = JwsHeader.with(MacAlgorithm.HS256).build();

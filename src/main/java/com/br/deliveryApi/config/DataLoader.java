@@ -2,8 +2,10 @@ package com.br.deliveryApi.config;
 
 import com.br.deliveryApi.model.Cliente;
 import com.br.deliveryApi.model.Produto;
+import com.br.deliveryApi.model.Role;
 import com.br.deliveryApi.repository.ClienteRepository;
 import com.br.deliveryApi.repository.ProdutoRepository;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,8 +18,13 @@ import java.util.List;
 public class DataLoader {
 
     @Bean
-    CommandLineRunner seed(ClienteRepository clientes, ProdutoRepository produtos, PasswordEncoder encoder) {
+    CommandLineRunner seed(ClienteRepository clientes, ProdutoRepository produtos, PasswordEncoder encoder,
+                           @Value("${app.admin.email}") String adminEmail,
+                           @Value("${app.admin.password}") String adminPassword) {
         return args -> {
+            if (!clientes.existsByEmail(adminEmail)) {
+                clientes.save(new Cliente("Administrador", adminEmail, encoder.encode(adminPassword), Role.ADMIN));
+            }
             if (clientes.count() == 0) {
                 clientes.saveAll(List.of(
                         new Cliente("Maria Souza", "maria@exemplo.com", encoder.encode("maria123")),

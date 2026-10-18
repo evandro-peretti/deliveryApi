@@ -21,6 +21,7 @@ Como a API é protegida por segurança, siga o fluxo abaixo para testar os endpo
 
 Abaixo mostro como o arquivo `src/main/resources/application.yml` deve ser configurado.
 As configurações mais importantes são a especificação das datas sempre estarem em formato UTC e a secret do JWT.
+O valor do usuário e senha do admin serão armazenados no banco pelo DataLoader quando executar a API.
 
 ```yaml
 spring:
@@ -52,6 +53,9 @@ app:
     expiration-minutes: 60
     cors:
     allowed-origins: http://localhost:5173,http://127.0.0.1:5173
+  admin:
+    email: admin@exemplo.com
+    password: "${ADMIN_PASSWORD:admin123}"
 
 springdoc:
   api-docs:
